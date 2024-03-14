@@ -5,6 +5,8 @@ import pandas as pd
 import requests
 import numpy as np
 
+sns.set_style("darkgrid")
+
 st.title("Pokedex!")
 
 # Display image of pokemon! (latest sprite from front!)
@@ -89,7 +91,17 @@ with col4:
     st.write("Cry")
     st.audio(cry)
 
-st.pyplot(graph.figure)
+
+
+with st.container(height=400, border = False):
+   col5, col6 = st.columns(2)
+#    with col6:
+#         st.write("Final form")
+   with col5:
+        #st.pyplot(graph.figure, use_container_width = True)
+        st.bar_chart(data = height_data,
+					x = 'Pokemon',
+					y = 'Heights')     
 
 
 
